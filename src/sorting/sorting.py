@@ -35,12 +35,13 @@ def merge(arrA, arrB):
 
 
 def merge_sort(arr):
-    # break the arr down recursively
+    # break the arr down recursively or keep splitting
     # base case:  when the the lists gets to length 1
     # Your code here
     if len(arr) > 1:
         left = merge_sort(arr[:len(arr) // 2])
         right = merge_sort(arr[len(arr) // 2:])
+        # build the list using the merge fn
         arr = merge(left, right)
 
     return arr
